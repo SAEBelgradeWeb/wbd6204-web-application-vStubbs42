@@ -16,9 +16,11 @@ class CreateCampaignsTable extends Migration
         Schema::create('campaigns', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-//            $table->foreign('user_id')->references('id')->on('users');
+            $table->unsignedBigInteger('user_id');
             $table->date('start date');
             $table->date('end date');
+
+            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 

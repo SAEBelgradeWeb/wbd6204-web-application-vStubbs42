@@ -19,6 +19,7 @@ class CreateBoardsTable extends Migration
             $table->string('size');
             $table->integer('price');
             $table->string('location');
+            $table->string('status');
             $table->string('image');
         });
     }

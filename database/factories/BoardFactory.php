@@ -22,7 +22,13 @@ class BoardFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'type' => $this->faker->randomElement($array = array ('Bigboard','Cityboard','Megaboard')),
+            'size' => $this->faker->randomElement($array = array ('10 x 10','10 x 15','10 x 30')),
+            'price' => $this->faker->randomElement($array = array ('100','120','150')),
+            'location' => $this->faker->randomElement($array = array ('Highway','Throughway','Walkway')),
+            'image' => $this->faker->asciify('************'),
+            'status' => ('pending'),
+
         ];
     }
 }

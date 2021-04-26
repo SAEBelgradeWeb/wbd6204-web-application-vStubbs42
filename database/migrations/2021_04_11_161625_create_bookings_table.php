@@ -15,10 +15,13 @@ class CreateBookingsTable extends Migration
     {
         Schema::create('bookings', function (Blueprint $table) {
             $table->id();
-            $table->foreign('board_id')->references('id')->on('boards');
-            $table->foreign('campaign_id')->references('id')->on('campaigns');
+            $table->unsignedBigInteger('board_id');
+            $table->unsignedBigInteger('campaign_id');
             $table->date('start date');
             $table->date('end date');
+
+            $table->foreign('board_id')->references('id')->on('boards');
+            $table->foreign('campaign_id')->references('id')->on('campaigns');
         });
     }
 
